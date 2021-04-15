@@ -110,8 +110,13 @@ polls_us_election_2016 %>% arrange(desc(rawpoll_clinton))%>%head(10)
 
 3.2
 ```{r}
+polls_us_election_2016 %>% arrange(desc(samplesize))%>%head(5)
 
 ```
 
+3.3
+```{r}
+polls_us_election_2016 %>% arrange(desc(is.na(rawpoll_johnson)))
+```
 
 
