@@ -100,12 +100,18 @@ At least 3 types:
 select(polls_us_election_2016, contains("clinton") | contains("trump"))
 select(polls_us_election_2016,rawpoll_clinton:rawpoll_trump | adjpoll_clinton:adjpoll_trump )
 select(polls_us_election_2016,rawpoll_clinton:adjpoll_trump &-rawpoll_johnson & -rawpoll_mcmullin)
-
+```
 3.1
-arrange(polls_us_election_2016,desc(rawpoll_clinton))
-
-
+```{r}
+polls_us_election_2016 %>% arrange(desc(rawpoll_clinton))%>%head(10)
 
 ```
+
+
+3.2
+```{r}
+
+```
+
 
 
