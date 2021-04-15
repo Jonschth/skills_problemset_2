@@ -149,8 +149,9 @@ ggplot(data = df2,
 ```{r}
 polls_us_election_2016 %>%
  select(startdate, pollster, rawpoll_johnson) %>%
- group_by(pollster) %>%
- mutate(rank = min_rank(desc(rawpoll_johnson)))
+ group_by(startdate) %>%
+ mutate(rank = min_rank(desc(rawpoll_johnson)),ties.method = 'first')%>%
+  head(20)
 
 
 ```
@@ -161,8 +162,10 @@ polls_us_election_2016 %>%
 polls_us_election_2016 %>%
 count(pollster)
 
-
-
+polls_us_election_2016 %>%
+  group_by(pollster) %>%
+  summarise(pollster_n=n())
+  
 ```
 5.2
 ```{r}
@@ -179,14 +182,17 @@ polls_us_election_2016 %>%
   group_by(pollster)%>%
   count(grade)
 ```
+
+
+
+
+
 5.4
 
 ```{r}
 polls_us_election_2016 %>% 
-  group_by(pollster)%>%
-  count(grade)
+  group_by(state)%>%
+  arrange(rawpoll_mcmullin)
 ```
-
-
 
 
