@@ -89,6 +89,15 @@ select(polls_us_election_2016,grade,grade)
 ```{r}
 select(polls_us_election_2016, contains("RAW",ignore.case = TRUE))
 
+
+```
+2.3.3
+At least 3 types:
+
+```{r}
+select(polls_us_election_2016, contains("clinton") | contains("trump"))
+select(polls_us_election_2016,rawpoll_clinton:adjpoll_trump )
+
 ```
 
 
