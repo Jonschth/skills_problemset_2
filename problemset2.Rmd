@@ -123,18 +123,22 @@ polls_us_election_2016 %>% arrange(desc(is.na(rawpoll_johnson)))
 
 4.1
 ```{r}
-mutate(polls_us_election_2016,raw_trump=rawpoll_trump*samplesize)
+df <- polls_us_election_2016 %>% 
+  mutate(raw_trump=rawpoll_trump/100*samplesize) %>%       
+  mutate(raw_clinton=rawpoll_clinton/100*samplesize)
 ```
 4.2
 
 
   
 ```{r}
-mutate(polls_us_election_2016, new_var=samplesize-(raw_trump))
+df2 <- df %>% 
+  mutate(new_variable=samplesize-(raw_trump+raw_clinton))
 
-ggplot(data = polls_us_election_2016,
+
+ggplot(data = df2,
        mapping = aes(x = startdate,
-                     y = new_var)) +
+                     y = new_variable)) +
   geom_point() +
   geom_smooth(se=TRUE)
 ```
