@@ -96,7 +96,9 @@ At least 3 types:
 
 ```{r}
 select(polls_us_election_2016, contains("clinton") | contains("trump"))
-select(polls_us_election_2016,rawpoll_clinton:adjpoll_trump )
+select(polls_us_election_2016,rawpoll_clinton:rawpoll_trump | adjpoll_clinton:adjpoll_trump )
+
+
 
 ```
 
