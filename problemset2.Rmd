@@ -144,3 +144,21 @@ ggplot(data = df2,
 ```
   
 
+4.6
+
+```{r}
+polls_us_election_2016 %>%
+ select(startdate, pollster, rawpoll_johnson) %>%
+ group_by(pollster) %>%
+ mutate(rank = min_rank(desc(rawpoll_johnson)))
+
+
+```
+
+
+5.1
+polls_us_election_2016 %>%
+count(pollster)
+
+
+
