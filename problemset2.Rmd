@@ -25,8 +25,9 @@ You can also embed plots, for example:
 plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+# 2 Fun with dplyr
 
+## 2.1 Debugging mindset (5 pts) 
 
 ```{r}
 my_variable <- 10
@@ -47,7 +48,20 @@ y = rawpoll_trump))
 filter(polls_us_election_2016, state == "Florida")
 filter(polls_us_election_2016, as.numeric(grade) > 3)
 
-
+```
+## 2.2 Filter (15 points)
+### 2.2.1
+```{r}
+filter(polls_us_election_2016, state == "Alaska" | state == "Hawaii")
 
 ```
-view
+```{r}
+filter(polls_us_election_2016, samplesize > 500)
+```
+
+###2.2.1
+```{r}
+filter(polls_us_election_2016, rawpoll_trump > 60 & startdate>="2016-01-01" & startdate<="2016-01-31")
+
+```
+
