@@ -157,8 +157,36 @@ polls_us_election_2016 %>%
 
 
 5.1
+```{r}
 polls_us_election_2016 %>%
 count(pollster)
+
+
+
+```
+5.2
+```{r}
+polls_us_election_2016 %>% 
+  group_by(grade)%>%
+  summarise(mean=mean(samplesize))
+
+```
+
+5.3
+
+```{r}
+polls_us_election_2016 %>% 
+  group_by(pollster)%>%
+  count(grade)
+```
+5.4
+
+```{r}
+polls_us_election_2016 %>% 
+  group_by(pollster)%>%
+  count(grade)
+```
+
 
 
 
