@@ -45,7 +45,7 @@ ggplot(data = polls_us_election_2016) +
 geom_point(mapping = aes(x = startdate,
 y = rawpoll_trump))
 filter(polls_us_election_2016, state == "Florida")
-filter(polls_us_election_2016, as.numeric(grade) > 3)
+filter(polls_us_election_2016, as.numeric(pollster) == 190)
 
 ```
 ## 2.2 Filter (15 points)
@@ -64,7 +64,31 @@ filter(polls_us_election_2016, rawpoll_trump > 60 & startdate>="2016-01-01" & st
 
 ```
 
+
+
+
+
+2.2.2.1
+
 ```{r}
 filter(polls_us_election_2016, is.na(grade))
 ```
+
+2.2.2.3
+```{r}
+filter(polls_us_election_2016, as.numeric(grade)==10)
+levels(polls_us_election_2016$grade)
+filter(polls_us_election_2016, as.numeric(grade)==10 & is.na(grade))
+```   
+2.3.1
+```{r}
+select(polls_us_election_2016,grade,grade)
+```
+
+2.3.2
+```{r}
+select(polls_us_election_2016, contains("RAW",ignore.case = TRUE))
+
+```
+
 
