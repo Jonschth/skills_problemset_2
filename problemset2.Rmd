@@ -40,7 +40,6 @@ library(ggplot2)
 
 library (tidyverse)
 
-view(polls_us_election_2016)
 
 ggplot(data = polls_us_election_2016) +
 geom_point(mapping = aes(x = startdate,
@@ -63,5 +62,9 @@ filter(polls_us_election_2016, samplesize > 500)
 ```{r}
 filter(polls_us_election_2016, rawpoll_trump > 60 & startdate>="2016-01-01" & startdate<="2016-01-31")
 
+```
+
+```{r}
+filter(polls_us_election_2016, is.na(grade))
 ```
 
