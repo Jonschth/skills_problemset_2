@@ -1,4 +1,4 @@
-## i For reasons
+##i Four reasons
 1) good way to cooperate with others especially when many are working on code or projects
 2) good way to be able to reinstate old versions
 3) good way to back up work
