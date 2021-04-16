@@ -195,4 +195,36 @@ polls_us_election_2016 %>%
   arrange(rawpoll_mcmullin)
 ```
 
+5.5
+polls_us_election_2016 %>%
+	group_by(state) %>%
+	summarize(pollster_n=n()) %>%
+	filter(pollster_n>10)
+	arrange(desc(pollster_n))
+
+5.6
+
+```{r}
+polls_us_election_2016 %>%
+	group_by(grade,population) %>%
+	summarize(max_n=max(rawpoll_trump),min_n=min(rawpoll_trump)) 
+```
+polls_us_election_2016 %>%
+  group_by(state) %>%
+	summarize(pollster_n=n()) %>%
+  filter(pollster, state !="Alabama" & state != "Arkansas") %>%
+  arrange(desc(pollster_n))
+  
+```{r}
+polls_us_election_2016 %>%
+  group_by(state) %>%
+	summarize(pollster_n=n()) %>%
+  filter(state !="Alabama" & state != "Arkansas") %>%
+  arrange(desc(pollster_n))
+```
+  
+polls_us_election_2016 %>%
+  group_by(pollster) %>%
+	summarize(mean_spread_n=mean(spread) 
+
 
